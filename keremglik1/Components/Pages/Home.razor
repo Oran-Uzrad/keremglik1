@@ -1,0 +1,90 @@
+﻿@page "/"
+@inject IConfiguration Config
+
+<style>
+    .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+    }
+
+    .olive{
+        background: #BAB86C;
+    }
+
+    .lighttext {
+        color: black;
+        font-weight: bold;
+        font-size: 2em;
+    }
+
+      
+</style>
+
+<PageTitle>Kerem Glik</PageTitle>
+
+<p class = "h4">
+    Default Connection String: @defaultConnection
+</p>
+
+<main class="olive">
+    <div class="container">
+        <div class="row">
+            <div class="col">
+            </div>
+            <div class="col-8" style="text-align: center; ">
+                <br><br>
+                <br><br>
+                <br><br>
+            </div>
+            <div class="col">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+            </div>
+            <div class="col-sm">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-5">
+                <img src="lebal_glik2_12_24.jpg" alt="Missing Image" class="center">
+                <br><br>
+                <br><br>
+                <br><br>
+            </div>
+            <div class="col-6">
+                <p class="lighttext" dir="rtl">
+                    <br /><br /><br /><br />
+                    אנחנו כרם-גליק, משק משפחתי במושב כרם מהר"ל
+                    <br /><br />
+                    אנחנו מגדלים כרמי זיתים, מפיקים שמן זית איכותי ומשווקים ללקוחותינו
+                    <br /><br />
+                    האתר שלנו בבניה, אנחנו מתנצלים. בקרוב נרחיב ונספר על עצמינו יותר
+                    <br /><br />
+                    בינתיים, אתם מוזמנים להתקשר אלינו לפרטים והזמנות: 054-6231203, נעמי
+
+
+
+                </p>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+
+@code
+{
+    private string defaultConnection = "";
+
+    protected override void OnInitialized()
+    {
+        defaultConnection = Config.GetConnectionString("Default") ?? "unknown";
+    }
+}
